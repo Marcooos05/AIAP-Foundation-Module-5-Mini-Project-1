@@ -1,8 +1,10 @@
 # Data (external input — see README)
 data/
 
-# macOS
+# OS
 .DS_Store
+Thumbs.db
+*:Zone.Identifier
 
 # Python
 __pycache__/
@@ -11,9 +13,19 @@ __pycache__/
 venv/
 env/
 
+# Environment / secrets
+.env
+.env.*
+
+# Editors
+.vscode/
+.idea/
+
 # Jupyter
 .ipynb_checkpoints/
 
-# Generated artifacts
+# Generated artifacts (reports/ is tracked: metrics JSON and figures)
 models/
+*.joblib
+*.log
 .pytest_cache/
