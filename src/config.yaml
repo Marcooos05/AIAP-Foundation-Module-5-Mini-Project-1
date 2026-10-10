@@ -1,1 +1,60 @@
-# Pipeline configuration — fill in once the dataset is added.
+file_path: "./data/mini_project_1_data.csv"
+target_column: "shares"
+log_target: true                 # train on log1p(shares): skew 34 -> 1.0 (EDA §4.1)
+val_test_size: 0.2
+validation_size: 0.5             # 80/10/10 train/validation/test
+random_state: 42
+cv: 5
+scoring: neg_root_mean_squared_error   # GridSearchCV scoring; model selection uses validation RMSE
+n_jobs: -1
+param_grids:
+  ridge:
+    regressor__alpha: [0.01, 0.1, 1.0, 10.0, 100.0]
+  lasso:
+    regressor__alpha: [0.0001, 0.001, 0.01, 0.1]   # small: the target is on the log scale
+  decision_tree:
+    regressor__max_depth: [5, 10, 20]
+    regressor__min_samples_leaf: [1, 20, 50]
+  random_forest:
+    regressor__n_estimators: [200]
+    regressor__max_depth: [10, 20, null]
+    regressor__min_samples_leaf: [1, 10]
+    regressor__max_features: [0.33, 1.0]
+  gradient_boosting:
+    regressor__n_estimators: [200, 400]
+    regressor__learning_rate: [0.05, 0.1]
+    regressor__max_depth: [3, 5]
+    regressor__subsample: [0.8]
+# 19 features kept in EDA §7. n_comments is excluded as leakage (EDA §5.4).
+numeric_features:
+  - kw_avg_min
+  - kw_avg_max
+  - kw_avg_avg
+  - self_reference_avg_shares
+  - num_hrefs
+  - num_self_hrefs
+  - num_imgs
+  - num_videos
+  - num_keywords
+  - n_tokens_content
+  - n_tokens_title
+  - n_non_stop_unique_tokens
+  - average_token_length
+  - timedelta
+  - pub_month
+  - is_weekend
+  - is_no_text
+# Heavy-tailed counts / share totals: log1p before scaling (EDA §4.2). Must be a subset of numeric_features.
+log_features:
+  - kw_avg_min
+  - kw_avg_max
+  - kw_avg_avg
+  - self_reference_avg_shares
+  - num_hrefs
+  - num_self_hrefs
+  - num_imgs
+  - num_videos
+  - n_tokens_content
+nominal_features:
+  - data_channel
+  - weekday

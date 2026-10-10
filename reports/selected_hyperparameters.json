@@ -1,0 +1,9 @@
+{
+  "model_name": "gradient_boosting",
+  "hyperparameters": {
+    "regressor__learning_rate": 0.05,
+    "regressor__max_depth": 5,
+    "regressor__n_estimators": 200,
+    "regressor__subsample": 0.8
+  }
+}

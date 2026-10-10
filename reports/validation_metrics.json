@@ -1,0 +1,78 @@
+{
+  "dummy_mean": {
+    "rmse": 0.9335449275873744,
+    "mae": 0.714404657740481,
+    "r2": -7.083146820185959e-07,
+    "mae_shares": 2366.781333811732,
+    "median_ae_shares": 852.6180459175447
+  },
+  "linear_regression": {
+    "rmse": 0.8908871716589736,
+    "mae": 0.6684786277309296,
+    "r2": 0.08930013706218409,
+    "mae_shares": 2298.61412625364,
+    "median_ae_shares": 772.4906344670646
+  },
+  "ridge": {
+    "rmse": 0.8907847702268281,
+    "mae": 0.6686198030084631,
+    "r2": 0.08950948256306968,
+    "mae_shares": 2298.6207444190663,
+    "median_ae_shares": 773.2773469578864,
+    "best_params": {
+      "regressor__alpha": 100.0
+    },
+    "best_cv_score": -0.8761222960168247
+  },
+  "lasso": {
+    "rmse": 0.8908526293420428,
+    "mae": 0.6684810791433234,
+    "r2": 0.08937075671962602,
+    "mae_shares": 2298.5660685012053,
+    "median_ae_shares": 772.2512117227088,
+    "best_params": {
+      "regressor__alpha": 0.0001
+    },
+    "best_cv_score": -0.8761231661487058
+  },
+  "decision_tree": {
+    "rmse": 0.8915585780312022,
+    "mae": 0.6674363861013982,
+    "r2": 0.08792694387573863,
+    "mae_shares": 2300.1851076130374,
+    "median_ae_shares": 779.7378162680563,
+    "best_params": {
+      "regressor__max_depth": 5,
+      "regressor__min_samples_leaf": 50
+    },
+    "best_cv_score": -0.8777647801025875
+  },
+  "random_forest": {
+    "rmse": 0.8574900240231248,
+    "mae": 0.6409162080935363,
+    "r2": 0.1563000703434333,
+    "mae_shares": 2251.6690873794164,
+    "median_ae_shares": 740.2565749484097,
+    "best_params": {
+      "regressor__max_depth": null,
+      "regressor__max_features": 0.33,
+      "regressor__min_samples_leaf": 10,
+      "regressor__n_estimators": 200
+    },
+    "best_cv_score": -0.8482805548641448
+  },
+  "gradient_boosting": {
+    "rmse": 0.8564710402524033,
+    "mae": 0.6409042219998502,
+    "r2": 0.15830407201529784,
+    "mae_shares": 2255.4928462654,
+    "median_ae_shares": 734.4581582662337,
+    "best_params": {
+      "regressor__learning_rate": 0.05,
+      "regressor__max_depth": 5,
+      "regressor__n_estimators": 200,
+      "regressor__subsample": 0.8
+    },
+    "best_cv_score": -0.8481114213592724
+  }
+}

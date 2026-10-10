@@ -1,0 +1,28 @@
+{
+  "n_rows": 35680,
+  "n_columns": 30,
+  "missing_values_per_column": {
+    "num_hrefs": 721,
+    "num_self_hrefs": 721,
+    "num_imgs": 1419,
+    "num_videos": 16755,
+    "data_channel": 5462,
+    "self_reference_min_shares": 721,
+    "self_reference_max_shares": 721,
+    "self_reference_avg_shares": 721
+  },
+  "n_duplicate_rows": 0,
+  "n_negative_keyword_values": {
+    "kw_min_min": 20660,
+    "kw_avg_min": 767,
+    "kw_min_avg": 6
+  },
+  "n_zero_content_articles": 1061,
+  "target_summary": {
+    "min": 4.0,
+    "median": 1400.0,
+    "mean": 3402.054960762332,
+    "max": 843300.0,
+    "skew": 34.41346121649466
+  }
+}
